@@ -80,11 +80,12 @@ body * {
   left: 0;
   z-index: 1;
   transform: translatey(-50%);
+
+  animation: slide-back 0.4s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -131,7 +132,7 @@ ul li a:hover {
 #social-links {
   display: flex;
   padding: 24px 0;
-  font-size: 40px;
+  font-size: 30px;
   justify-content: center;
 }
 
@@ -140,6 +141,8 @@ ul li a:hover {
   align-items: center;
   justify-content: center;
   padding: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
   border-radius: 50%;
   transition: background 0.2s;
   background: rgba(255, 255, 255, 0.1);
@@ -158,4 +161,20 @@ footer {
   padding: 10px;
   text-align: center;
   font-size: 14px;
+}
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
